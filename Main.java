@@ -1,9 +1,15 @@
 package tesdt;
 
 import java.time.LocalDate;
+import tesdt.Human.Gender;
+import tesdt.Human.Human;
+import tesdt.family_tree.FamilyTree;
+import tesdt.writer.FileHandlerProj;
 
 public class Main {
     public static void main(String[] args) {
+
+        String filename = "H:/python/tesdt/Family.txt";
         FamilyTree tree = new FamilyTree();
 
         Human vasya = new Human("Василий", Gender.Male, LocalDate.of(1963, 12, 10));
@@ -21,12 +27,24 @@ public class Main {
         tree.add(semyon);
         tree.add(aleks);
 
-        Human grandMother = new Human("Лариса", Gender.Female, LocalDate.of(1945, 9, 1));
-        grandMother.addChild(vasya);
+       
+        
+//        tree = read(filename);
+        // System.out.println(tree);
 
-        tree.add(grandMother);
+        save(tree,filename);
+        // tree = read(filename);
+        System.out.println(read(filename));
+        }
+        
 
-        System.out.println(tree);
-
+        static void save(FamilyTree familyTree,String filename){
+                FileHandlerProj fileHandler = new FileHandlerProj();
+                fileHandler.save(familyTree,filename);
+        }
+        
+        static FamilyTree read(String filename){
+                FileHandlerProj fileHandler = new FileHandlerProj();
+                return (FamilyTree) fileHandler.read(filename);
         }
 }

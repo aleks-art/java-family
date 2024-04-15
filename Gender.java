@@ -1,4 +1,4 @@
-package tesdt;
+package tesdt.Human;
 
 public enum Gender {
     Male, Female

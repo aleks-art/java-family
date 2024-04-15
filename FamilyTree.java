@@ -1,9 +1,12 @@
-package tesdt;
+package tesdt.family_tree;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-public class FamilyTree{
+import tesdt.Human.Human;
+
+public class FamilyTree implements Serializable{
     private long humansId;
     private List<Human> humanList;
 
