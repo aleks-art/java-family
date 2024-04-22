@@ -6,11 +6,11 @@ import java.util.List;
 import tesdt.Human.Human;
 
 
-public class FamilyIterator implements Iterator<Human>{
+public class FamilyIterator<T extends FamilyInterface> implements Iterator<T>{
     private int index;
-    private List<Human> HumanList;
+    private List<T> HumanList;
 
-    public FamilyIterator(List<Human> humanList) {
+    public FamilyIterator(List<T> humanList) {
         this.HumanList = humanList;
         index = 0;
     }
@@ -22,7 +22,7 @@ public class FamilyIterator implements Iterator<Human>{
     }
 
     @Override
-    public Human next() {
+    public T next() {
         return HumanList.get(index++);
     }
 
