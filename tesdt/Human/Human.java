@@ -1,12 +1,14 @@
 package tesdt.Human;
 
+import tesdt.family_tree.FamilyInterface;
+
 import java.io.Serializable;
 import java.time.LocalDate;
 import java.time.Period;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Human implements Serializable, Comparable<Human>{
+public class Human implements Serializable, Comparable<Human>, FamilyInterface<Human> {
     private long id;
     private String name;
     private Gender gender;
